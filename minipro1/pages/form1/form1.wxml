@@ -1,0 +1,28 @@
+<!--pages/form1/form1.wxml-->
+<view>
+  hello world
+</view>
+<text selectable="true">长按选中</text>
+<text decode>&nbsp;不换行</text>
+<text>
+  hello
+</text>
+<text user-select>world</text>
+<!--checkbox-group 不加不会换行 -->
+<checkbox-group>
+  <checkbox value="0" />男
+  <checkbox value="1" />女
+</checkbox-group>
+<radio-group bindchange="">
+  <radio value="0"/>男
+  <radio value="0"/>女
+</radio-group>
+<button>btn1</button>
+<button type="primary">btn2primary</button><button default>btn2default</button>
+<button form-type="submit">submit</button>
+<button form-type="reset">submit</button>
+<button open-type="getUserInfo" type="warn">getUserInfo</button>
+
+text<input type="text"/>
+password<input type="password"/>
+number<input type="number"/>

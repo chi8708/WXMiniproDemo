@@ -1,0 +1,60 @@
+<!--pages/form2/form2.wxml-->
+<text>{{num}}</text>
+<view>
+  <text> 输入提交</text><input type="text" class="txt_input" bindinput="txtInput" placeholder="输入提交" />
+  <button type="primary" bindtap="btnAdd">自增+1</button>
+  <view style="margin-top:20px;">
+    <text>页面传参data- js通过e.currentTarget.dataset获取</text>
+    <button type="default" bindtap="btnSendpms" data-val1="1" data-test2='123232'>传参data-</button>
+  </view>
+  <view>
+
+    <rich-text nodes="{{richTxt}}" />
+    <button bindtap="showLoading">加载中...</button>
+    <button bindtap="showAlert">弹窗</button>
+    <button bindtap="showModel">showModel</button>
+  </view>
+  <view style="margin-top: 10px;">
+    <button type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo">getUserInfo</button>
+    <button type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">getPhoneNumber</button>
+    <button type="primary" open-type="contact" bindcontact="getContact">getcontact客户</button>
+  </view>
+  <view style="margin: 20px;">
+    <navigator url="/pages/form1/form1">标签跳转</navigator>
+    <button bindtap="redirect">点击跳转</button>
+
+
+    <!--wxml-->
+
+  </view>
+
+<!-- wxs 可以写少量的js代码 -->
+  <view>
+    <wxs module="m1">
+      var msg = "hello world";
+      module.exports.message = msg;
+    </wxs>
+    <view> {{m1.message}} </view>
+  </view>
+  <wxs module="wxs" src="./test.wxs"></wxs>
+  <view id="tapTest" data-hi="Weixin" bindtap="{{wxs.tapName}}"> Click me! </view>
+
+  <!-- 自定义组件 在json文件中引入 -->
+  <my-component prop-a="{{dataFieldA}}" prop-b="{{dataFieldB}}">
+    <!-- 这部分内容将被放置在组件 <slot> 的位置上 -->
+     <view>这里是插入到组件slot中的内容</view> 
+  </my-component>
+  <!-- 模版  重复的页面结构不同的数据可以用模版-->
+
+<label for="">    模版的使用</label>
+  <template name="staffName">
+    <view>
+      FirstName: {{firstName}}, LastName: {{lastName}}
+    </view>
+</template>
+
+<template is="staffName" data="{{...staffA}}"></template>
+<template is="staffName" data="{{...staffB}}"></template>
+<template is="staffName" data="{{...staffC}}"></template>
+
+</view>

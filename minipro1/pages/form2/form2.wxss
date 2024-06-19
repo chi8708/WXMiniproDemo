@@ -1,0 +1,4 @@
+/* pages/form2/form2.wxss */
+.txt_input{
+  border: 1px solid #888888;
+}
