@@ -1,10 +1,12 @@
 {
   "pages": [
+    "pages/liptick/index",
+    "pages/canvas/index",
     "pages/form2/form2",
     "pages/form1/form1",
     "pages/index/index",
     "pages/logs/logs"
-    
+
   ],
   "window": {
     "backgroundTextStyle": "light",
